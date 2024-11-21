@@ -1,0 +1,232 @@
+body{
+    background: linear-gradient(to bottom, #3498db, #2ecc71);
+}
+
+.root {
+    display: grid;
+    height: 90vh;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 'red blue blue'
+                        'red green green';
+    margin: 50px;
+    filter: drop-shadow(8px 8px 25px cyan);
+}
+
+.left-container {
+    background-color: #2c3e50;
+    grid-area: red;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    color: white;
+}
+
+.mid-container {
+    background-color: #3498db;
+    grid-area: blue;
+    border-top-right-radius: 15px;
+    color: white;
+}
+
+.right-container {
+    background-color: #2ecc71;
+    grid-area: green;
+    border-bottom-right-radius: 15px;
+    color: white;
+}
+
+.task-box {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas: none;
+    margin-top: 20px;
+}
+
+.task {
+    background-color: #e74c3c;
+    border-radius: 20px;
+    padding: 15px;
+    margin: 10px;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.task:hover {
+    background-color: #c0392b;
+}
+
+
+.task-number {
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+
+.task-name {
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.task-number {
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+.bar-chart {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    width: 400px;
+    height: 250px;
+    border-left: 2px solid #34495e;
+    border-bottom: 2px solid #34495e;
+    margin: 20px auto;
+    padding: 10px;
+    position: relative;
+    border-radius: 10px;
+}
+
+.bar {
+    width: 60px;
+    background-color: #1abc9c;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin: 1px;
+    transition: background-color 0.3s ease-in-out;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.bar:hover {
+    background-color: #16a085;
+    color: white;
+}
+
+.bar span {
+    color: white;
+    font-weight: bold;
+}
+
+.balance-container{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas: none;
+    margin-top: 20px;
+}
+
+.balance-box{
+    border-radius: 20px;
+    background-color: #427a9f;
+    padding:   10px;
+    margin: 5px 10px 5px 10px;
+    text-align: center;
+}
+
+
+.acc-name .balance{
+    margin-bottom: 5px;
+    font-weight:bold;
+}
+
+.pie-chart{
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+
+.pie{
+    background-color: #c0392b;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inner-pie{
+    background-color: #400a04;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner-balance{
+    text-decoration: underline;
+}
+
+.action-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.action-button button{
+    margin: 10px;
+}
+
+button{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    background-color: #e74c3c;
+    color: white;
+    filter: drop-shadow(4px 4px 25px #981102d7);
+}
+
+@media (max-width: 480px) {
+    .action-container {
+        flex-direction: column; 
+    }
+
+    .pie {
+        width: 50px; 
+        height: 50px;
+    }
+
+    .inner-pie {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .root{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+    }
+
+    .action-container {
+        gap: 5px; 
+    }
+
+    .action-button button {
+        font-size: 12px; 
+        padding: 8px 10px;
+    }
+
+    .pie {
+        width: 150px; 
+        height: 150px;
+    }
+
+    .inner-pie {
+        width: 100px;
+        height: 100px;
+    }
+
+    .inner-balance {
+        font-size: 14px;
+    }
+}
+
