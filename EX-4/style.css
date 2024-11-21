@@ -1,5 +1,6 @@
 body{
     background: linear-gradient(to bottom, #3498db, #2ecc71);
+    background-attachment: fixed;
 }
 
 .root {
@@ -182,51 +183,120 @@ button{
     background-color: #e74c3c;
     color: white;
     filter: drop-shadow(4px 4px 25px #981102d7);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-@media (max-width: 480px) {
-    .action-container {
-        flex-direction: column; 
-    }
-
-    .pie {
-        width: 50px; 
-        height: 50px;
-    }
-
-    .inner-pie {
-        width: 25px;
-        height: 25px;
-    }
+button:hover {
+    background-color: #c0392b;
+    transform: scale(1.1); 
 }
 
-@media (max-width: 768px) {
-    .root{
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto;
-    }
-
-    .action-container {
-        gap: 5px; 
-    }
-
-    .action-button button {
-        font-size: 12px; 
-        padding: 8px 10px;
-    }
-
-    .pie {
-        width: 150px; 
-        height: 150px;
-    }
-
-    .inner-pie {
-        width: 100px;
-        height: 100px;
-    }
-
-    .inner-balance {
-        font-size: 14px;
-    }
+.movie-container{
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 10px;
+    scrollbar-color: #3498db #ecf0f1;
+    overflow-y: hidden;
+    scrollbar-width: thin;
 }
 
+.box{
+    height: 350px;
+    width: 200px;
+    background-color: rgb(13, 72, 35);
+    text-align: center;
+    padding-bottom: 1px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.box img{
+    width:200px ;
+    height:300px;
+}
+
+.box:hover{
+    transform: scale(1.05);
+}
+
+.title{
+    font-family: 'Quicksand', 'Nunito', sans-serif;
+    text-align: center;
+}
+
+.recent-container{
+    font-family: 'Quicksand', 'Nunito', sans-serif;
+    
+    
+}
+
+.recent{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+.recent-bar{
+    background-color: #3498db;
+    border-radius: 20px;
+    margin: 5px;
+
+}
+
+#tiktok{
+    height: 5px;
+    width: 400px;
+}
+
+#facebook{
+    height: 5px;
+    width: 100px;
+}
+
+#instagram{
+    height: 5px;
+    width: 300px;
+}
+
+#stumble-guys{
+    height: 5px;
+    width: 400px;
+}
+
+#chrome{
+    height: 5px;
+    width: 150px;
+}
+
+
+@media(max-width:675px){
+    .root {
+        display: grid;
+        height: 90vh;
+        grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+        grid-template-rows: auto;
+        grid-template-areas: 'red'
+                            'blue'
+                            'green';
+        margin: 50px;
+        filter: drop-shadow(8px 8px 25px cyan);
+    }
+
+    .left-container {
+        background-color: #2c3e50;
+        grid-area: red;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+        color: white;
+    }
+
+    .task-box {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 2fr;
+        grid-template-areas: none;
+        margin-top: 20px;
+    }
+    
+}
